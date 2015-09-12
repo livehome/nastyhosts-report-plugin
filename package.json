@@ -1,0 +1,23 @@
+{
+  "name": "nastyhosts-report-plugin",
+  "version": "1.0.0",
+  "description": "Gather reports of evil addresses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livehome/nastyhosts-report-plugin.git"
+  },
+  "keywords": [
+    "nastyhosts",
+    "plugin"
+  ],
+  "author": "LiveHome Sp. z o.o.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/livehome/nastyhosts-report-plugin/issues"
+  },
+  "homepage": "https://github.com/livehome/nastyhosts-report-plugin#readme"
+}
