@@ -9,6 +9,7 @@ function report(req, res) {
         const report = JSON.stringify({
           ip: req.params.ip,
           reporter: req.connection.remoteAddress,
+          comment: req.params.comment,
           timestamp: Date.now()
         });
 
@@ -23,7 +24,7 @@ module.exports = function(config) {
     routes: [
       {
         method: "get",
-        path: "/report/:ip",
+        path: "/report/:ip/:comment",
         callback: report
       }
     ]
