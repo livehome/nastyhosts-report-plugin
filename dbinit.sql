@@ -1,3 +1,7 @@
+drop table reports cascade;
+drop table reported_ips cascade;
+drop function addReport(var_ip inet, var_reporter inet, var_comment text);
+
 create table reported_ips (
   id bigserial primary key,
   ip inet unique,
@@ -21,10 +25,8 @@ begin
     -- do nothing
   end;
 
-  start transaction;
-    insert into reports(ip_id, reporter, comment) values ((select id from reported_ips where reported_ips.ip = var_ip), var_reporter, var_comment);
-    update reported_ips set reports_count = reports_count + 1 where ip = var_ip;
-  commit;
+  insert into reports(ip_id, reporter, comment) values ((select id from reported_ips where reported_ips.ip = var_ip), var_reporter, var_comment);
+  update reported_ips set reports_count = reports_count + 1 where ip = var_ip;
 end;
 $$
 language plpgsql;

@@ -18,12 +18,13 @@ function report(req, res) {
           timestamp: Date.now()
         };
 
-        client.query("SELECT addReport($1, $2, $3, $4);", [
+        client.query("SELECT addReport($1, $2, $3);", [
           report.ip,
           report.reporter,
-          report.comment,
-          report.timestamp
-        ]);
+          report.comment
+        ], function(err) {
+          if(err) console.warn(err)
+        });
       };
     done();
   });
