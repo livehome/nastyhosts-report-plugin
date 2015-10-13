@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/livehome/nastyhosts-report-plugin/issues"
   },
-  "homepage": "https://github.com/livehome/nastyhosts-report-plugin#readme"
+  "homepage": "https://github.com/livehome/nastyhosts-report-plugin#readme",
+  "dependencies": {
+    "pg": "^4.4.2"
+  }
 }
