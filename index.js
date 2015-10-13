@@ -18,7 +18,7 @@ function report(req, res) {
           timestamp: Date.now()
         };
 
-        client.query("SELECT addReport($1, $2, $3);", [
+        client.query("SELECT add_report($1, $2, $3);", [
           report.ip,
           report.reporter,
           report.comment
