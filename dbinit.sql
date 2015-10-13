@@ -36,7 +36,7 @@ create function update_ips_table() returns trigger as
 $$
 begin
   update reported_ips set reports_count = reports_count + 1, last_reported = NEW.timestamp where id = NEW.ip_id;
-  return null;
+  return NEW;
 end
 $$
 language plpgsql;
