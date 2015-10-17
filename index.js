@@ -30,15 +30,7 @@ function report(req, res) {
   });
 };
 
-module.exports = function(config) {
+module.exports = function(app, config) {
   conString = config.report.conString;
-  return {
-    routes: [
-      {
-        method: "get",
-        path: "/report/:ip/:comment",
-        callback: report
-      }
-    ]
-  };
+  app.get("/report/:ip/:comment", report);
 };

@@ -1,6 +1,6 @@
 {
   "name": "nastyhosts-report-plugin",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Gather reports of evil addresses.",
   "main": "index.js",
   "scripts": {
