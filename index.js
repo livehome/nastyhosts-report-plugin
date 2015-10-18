@@ -5,6 +5,7 @@ let ipcheck;
 
 function report(req, res) {
   res.send("Thanks");
+  if(parseInt(req.params.version) != 1) return;
   ipcheck(req.params.ip).then(function(res) {
     if(res.suggestion == "deny") return;
 
@@ -38,5 +39,5 @@ function report(req, res) {
 module.exports = function(app, config, _ipcheck) {
   conString = config.report.conString;
   ipcheck = _ipcheck;
-  app.get("/report/:ip/:comment", report);
+  app.get("/report/:version/:ip/:comment", report);
 };
